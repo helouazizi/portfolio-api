@@ -15,7 +15,7 @@ func LoadJSON[T any](filePath string, target *[]T) error {
 
 	// lets unmarshel the content into our target
 	if err := json.Unmarshal(content, &target); err != nil {
-		return fmt.Errorf("failed to Unmarshal data into : %v", target)
+		return fmt.Errorf("failed to Unmarshal data from : %s,%w", filePath, err)
 	}
 	return nil
 }
