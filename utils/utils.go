@@ -20,6 +20,15 @@ func LoadJSON[T any](filePath string, target *[]T) error {
 	return nil
 }
 
-func SaveJSON[T any](filePath string, data *[]T) error {
+func SaveJSON[T any](filePath string, data []T) error {
+	bytes, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		return fmt.Errorf("failed to marshal JSON: %w", err)
+	}
+
+	err = os.WriteFile(filePath, bytes, 0644)
+	if err != nil {
+		return fmt.Errorf("failed to write file %s: %w", filePath, err)
+	}
 	return nil
 }
