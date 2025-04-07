@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "title": "Push Swap",
+        "description": "Sort stacks using custom operations",
+        "tags": ["Go", "Algorithms"],
+        "repo_url": "https://github.com/you/push-swap"
+    }
+]
