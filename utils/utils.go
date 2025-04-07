@@ -19,3 +19,7 @@ func LoadJSON[T any](filePath string, target *[]T) error {
 	}
 	return nil
 }
+
+func SaveJSON[T any](filePath string, data *[]T) error {
+	return nil
+}
