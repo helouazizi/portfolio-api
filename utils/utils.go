@@ -3,6 +3,7 @@ package utils
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"os"
 )
 
@@ -31,4 +32,9 @@ func SaveJSON[T any](filePath string, data []T) error {
 		return fmt.Errorf("failed to write file %s: %w", filePath, err)
 	}
 	return nil
+}
+
+func EnableCORS(w http.ResponseWriter) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 }

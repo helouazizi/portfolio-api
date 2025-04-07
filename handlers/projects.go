@@ -8,6 +8,7 @@ import (
 )
 
 func GetProjects(w http.ResponseWriter, r *http.Request) {
+	utils.EnableCORS(w) // fix cors issues
 	var projects []models.Project
 	err := utils.LoadJSON("./storage/projects.json", &projects)
 	if err != nil {
