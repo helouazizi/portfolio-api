@@ -8,9 +8,9 @@ import (
 )
 
 func GetProjects(w http.ResponseWriter, r *http.Request) {
-	//utils.EnableCORS(w) // fix cors issues
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	utils.EnableCORS(w) // fix cors issues
+	// w.Header().Set("Access-Control-Allow-Origin", "*")
+	// w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	var projects []models.Project
 	err := utils.LoadJSON("./storage/projects.json", &projects)
 	if err != nil {
